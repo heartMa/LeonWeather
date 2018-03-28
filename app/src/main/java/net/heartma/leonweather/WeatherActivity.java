@@ -23,6 +23,7 @@ import com.bumptech.glide.Glide;
 
 import net.heartma.leonweather.gson.Forecast;
 import net.heartma.leonweather.gson.Weather;
+import net.heartma.leonweather.service.AutoUpdateService;
 import net.heartma.leonweather.util.HttpUtil;
 import net.heartma.leonweather.util.Utility;
 
@@ -222,6 +223,9 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        //启动服务
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
 
